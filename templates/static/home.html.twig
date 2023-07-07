@@ -1,0 +1,118 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Fourchette Victorieuse - Accueil{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{asset('css/home.css')}}">
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{asset('js/home.js')}}"></script>
+{% endblock %}
+
+{% block body %}
+<section id="home">
+    <div class="banner-filter">
+        <h1 class="text-center">Bienvenue à La Fourchette Victorieuse</h1>
+        <a class="btn mt-3 btn-hero" href="#">Nous découvrir</a>
+    </div>
+    <div class="banner"></div>
+    <!-- section présentation -->
+    <div class="home-intro">
+        <h2 class="text-center pt-4">Comment ça marche</h2>
+        <div class="info-container reveal">
+            <div class="instruction">
+                <img src="{{ asset('img/home/smartphone.jpg') }}" alt="smartphone" />
+                <h4>Adresse</h4>
+                <p>
+                    Je renseigne l'addresse à laquelle je souhaite être livré.
+                </p>
+            </div>
+            <div class="instruction">
+                <img src="{{ asset('img/home/menu.jpg') }}" alt="restaurant menu" />
+                <h4>Je choisi</h4>
+                <p>
+                    Je parcours le site et je sélectionne tous ce qui me fait envie.
+                </p>
+            </div>
+            <div class="instruction">
+                <img src="{{ asset('img/home/food-delivery.jpg') }}" alt="food delivery" />
+                <h4>Paiement et livraison</h4>
+                <p>
+                    Je valide mon panier, je suis les instructions pour le paiement.
+                    Bon appétit!!
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- section des offres -->
+    <div class="offer-section">
+        <h2 class="text-center">Nos offres</h2>
+        <div class="offer-container reveal">
+
+            <div class="card-offer">
+                <img src="{{asset('img/home/breakfast.jpg')}}" alt="offre petit déjeuner fourchette victorieuse">
+                <div class="card-content">
+                    <h4 class="card-title mt-2">Offre petit déjeuner</h4>
+                    <h5 class="offer-price mt-2">12,99€/mois</h5>
+                    <p class="text-center mt-3">
+                        Compends 1 jus accompagné d'une boisson chaude au choix, des fruits et génoise à volonté.
+                    </p>
+                    <a href="#" class="btn offer-sub">
+                        Souscrire
+                    </a>
+                </div>
+            </div>
+
+            <div class="card-offer">
+                <img src="{{asset('img/home/complete.jpg')}}" alt="offre formule complète fourchette victorieuse">
+                <div class="card-content">
+                    <h4 class="card-title mt-2">Formule Complète</h4>
+                    <h5 class="offer-price mt-2">24,99€/mois</h5>
+                    <p class="text-center mt-3">
+                        Offre petit déjeuner incluse + déjeuner. Inclus une entrée, un plat principale et un déssert.
+                    </p>
+                    <a href="#" class="btn offer-sub">
+                        Souscrire
+                    </a>
+                </div>
+            </div>
+
+            <div class="card-offer">
+                <img src="{{asset('img/home/groupe.jpg')}}" alt="offre formule entreprise fourchette victorieuse">
+                <div class="card-content">
+                    <h4 class="card-title mt-2">Formule Entreprise</h4>
+                    <h5 class="offer-price mt-2">Tarifs de Groupe</h5>
+                    <p class="text-center mt-3">
+                        Offre petit déjeuner incluse + déjeuner. Inclus une entrée, un plat principale et un déssert.
+                    </p>
+                    <a href="#" class="btn offer-sub">
+                        Souscrire
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block js %}
+    <script>
+        const navLinks = document.querySelectorAll('#desktop .navLinks');
+        window.addEventListener('scroll', () =>{
+            const scrollPosition = window.scrollY;
+            if(scrollPosition > 80){
+                document.querySelector('#desktop').classList.add('nav-active-bkg');
+                for (let i = 0; i < navLinks.length; i++) {
+                    navLinks[i].classList.add('nav-active-links');
+                }
+            }else{
+                document.querySelector('#desktop').classList.remove('nav-active-bkg');
+                for (let i = 0; i < navLinks.length; i++) {
+                    navLinks[i].classList.remove('nav-active-links');
+                }
+            }
+        })
+    </script>
+{% endblock %}

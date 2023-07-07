@@ -11,13 +11,18 @@
 }
 #desktop
 {
+    position: fixed;
+    left: 0;
+    right: 0;
     width: 100%;
     height: 80px;
-    background-color: #FFF;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+    background-color: transparent;
+    /* box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5); */
+    box-shadow: none;
     display: grid;
     grid-template-columns: 30% 45% 25%;
     grid-template-rows: 100%;
+    z-index: 1000;
 }
 #desktop ul
 {
@@ -31,7 +36,7 @@
     align-items: center;
     gap: 20px;
 }
-#desktop ul li a
+.navLinks
 {
     text-decoration: none;
     font-size: 21px;
@@ -81,4 +86,112 @@
     background: #fdbd32;
     transition: all 0.4s linear;
     transform: rotate(360deg);
+}
+/**************************** FOOTER *************************************/
+footer
+{
+    width: 100%;
+    min-height: 280px;
+    background: #303133;
+    color: #FFFF;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 4% 4% 0 4%;
+}
+footer .footer-first-row
+{
+    width: 100%;
+    min-height: 250px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+footer .footer-first-row div
+{
+    padding-right: 2%;
+}
+footer h4
+{
+    padding-bottom: 1em;
+    margin-bottom: 0;
+}
+footer .social-container
+{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+footer .social-container .social-btn
+{
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    color: var(--main-yellow);
+    border: 1px solid rgb(142, 141, 141);
+    border-radius: 50%;
+    cursor: pointer;
+}
+footer .social-container .social-btn:hover
+{
+    color: #303133;
+    background-color: #FFFF;
+    border: 1px solid #FFFF;
+
+}
+footer .contact-footer .f-contact
+{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 20px;
+}
+footer .f-contact-content
+{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+footer .contact-footer .f-contact .fa-location-dot
+{
+    padding-bottom: 8%;
+}
+footer .contact-footer .f-contact .fa-square-phone
+{
+    padding-bottom: 1%;
+}
+footer .contact-footer .f-contact p
+{
+    font-size: 15px;
+    margin: 0;
+    flex-wrap: wrap;
+}
+footer .footer-credits
+{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+footer .copyrights
+{
+    margin: 0;
+}
+footer .site-map-footer ul
+{
+    list-style-type: none;
+}
+footer .site-map-footer ul a
+{
+    text-decoration: none;
+    color: #FFFF;
+}
+footer .site-map-footer ul a:hover
+{
+    color: var(--main-yellow);
 }
