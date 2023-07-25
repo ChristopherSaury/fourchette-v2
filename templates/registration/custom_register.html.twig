@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Inscription{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{asset('css/signup.css')}}">
+{% endblock %}
+
+{% block body %}
+    <section id="signup">
+        <div class="su-img-container"></div>
+        <div class="su-form-container">
+            <h2 class="text-center mt-4">Créer un compte</h2>
+            <form id="signupForm">
+
+                <div class="errorSignUp">
+                    <p class="errSignUpMsg" style="margin-bottom: 0;"></p>
+                    <i onclick="closeErrMsgSignUp()" title="close" class="fa-solid fa-xmark"></i>
+                </div>
+                <div class="signupSuccess">
+                    <p class="suSuccessMsg" style="margin-bottom: 0;"></p>
+                    <i onclick="closeSuccessSignUp()" title="close" class="fa-solid fa-xmark"></i>
+                </div>
+
+                <div class="form-row">
+                    <label for="su-lastname">Nom * :</label>
+                    <input class="su-data" type="text" id="su-lastname" name="su-lastname" placeholder="Entrez votre nom">
+                </div>
+
+                <div class="form-row">
+                    <label for="su-firstname">Prénom * :</label>
+                    <input class="su-data" type="text" id="su-firstname" name="su-firstname" placeholder="Entrez votre prénom">
+                </div>
+
+                <div class="form-row">
+                    <label for="su-email">Email * :</label>
+                    <input class="su-data" type="email" id="su-email" name="su-email" placeholder="Entrez votre email">
+                </div>
+
+                <div class="form-row">
+                    <label for="su-phone">Numéro de téléphone * :</label>
+                    <input class="su-data" type="text" id="su-phone" name="su-phone" placeholder="Entrez votre numéro de téléphone">
+                </div>
+
+                <div class="form-row">
+                    <label for="su-psw">Mot de passe * :</label>
+                    <input class="su-data" type="password" id="su-psw" name="su-psw" placeholder="Entrez votre mot de passe">
+                </div>
+
+                <div class="form-row">
+                    <label for="su-psw2">Confirmer mot de passe * :</label>
+                    <input class="su-data" type="password" id="su-psw2" name="su-psw2" placeholder="Confirmez votre mot de passe">
+                </div>
+
+                <div class="use-terms-container">
+                    <input class="su-data" type="checkbox" name="use-terms" id="use-terms">
+                    <label for="use-terms">J'ai lu et j'accepte les <a href="#" class="use-terms-link">conditions générales d'utilisations</a></label>
+                </div>
+
+                <div class="btn-wrapper">
+                    <button id="su-submit" onclick="signup(); return false;" class="btn su-btn">Terminer</button>
+                    <p class="pt-2 su-login">Vous avez déjà un compte ? <a href="{{path('app_login')}}">Connectez vous</a></p>
+                </div>
+            </form>
+        </div>
+    </section>
+{% endblock %}
+
+{% block js %}
+    <script src="{{asset('js/signup.js')}}"></script>
+{% endblock %}
